@@ -99,7 +99,9 @@ def reply(reply_token):
         "messages": [flex_message]
     }
 
-    requests.post(url, headers=headers, json=data)
+    res = requests.post(url, headers=headers, json=data)
+    print("status:", res.status_code)
+    print("response:", res.text)
 
 
 if __name__ == "__main__":
